@@ -14,9 +14,6 @@ RUN pip install --no-cache-dir \
 ```
 
 In this command:
-- `pip install` is the command used to install Python packages.
-- `--no-cache-dir` is an option that tells pip not to use or create a cache, which can help to reduce the Docker image size.
-- `shortid` and `nbgitpuller` are Python packages that were already being installed.
 - `--upgrade "elyra[all]"` is the new addition which instructs pip to install (or upgrade if it's already installed) Elyra with all optional dependencies.
 
 Elyra is a set of AI-centric extensions to JupyterLab. It extends JupyterLab by offering a visual interface for creating comprehensive, executable descriptions of computational pipelines. This includes functionalities such as local and cloud-based Notebook execution, data preprocessing, model training and evaluation, and more.
