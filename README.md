@@ -1,22 +1,33 @@
-## Dockerfile Update
+### Adding Elyra Extensions and Building JupyterLab
 
-We made an update to the Dockerfile to include the installation of Elyra. 
+To include the Elyra extensions and build JupyterLab within the Dockerfile, follow these steps:
 
-In the Dockerfile, the Python package installation is managed by the `RUN pip install` command. To this command, we've added `--upgrade "elyra[all]"` which instructs pip to install and/or upgrade Elyra and all of its optional dependencies.
+1. Add the installation of Elyra extensions to the existing `RUN mamba install -y --quiet` command:
 
-The updated Dockerfile command looks like this:
-
-```Dockerfile
-RUN pip install --no-cache-dir \
-        shortid \
-        nbgitpuller \
-        --upgrade "elyra[all]" 
-```
-
-In this command:
-- `--upgrade "elyra[all]"` is the new addition which instructs pip to install (or upgrade if it's already installed) Elyra with all optional dependencies.
-
-Elyra is a set of AI-centric extensions to JupyterLab. It extends JupyterLab by offering a visual interface for creating comprehensive, executable descriptions of computational pipelines. This includes functionalities such as local and cloud-based Notebook execution, data preprocessing, model training and evaluation, and more.
-
----
-
+   ```Dockerfile
+   RUN mamba install -y --quiet \
+           cftime \
+           ipympl \
+           jmespath \
+           psycopg2 \
+           boto3 \
+           folium \
+           tensorflow \
+           tqdm \
+           lxml \
+           pymongo \
+           rasterstats \
+           geopandas \
+           ipywidgets \
+           matplotlib \
+           scipy \
+           lightgbm \
+           eo-learn \
+           plotly \
+           graphviz \
+           jq \
+           nb_conda_kernels \
+           dwave-ocean-sdk==5.5.0 \
+           amazon-braket-sdk==1.31.0 \
+           elyra \
+       && conda clean --all
