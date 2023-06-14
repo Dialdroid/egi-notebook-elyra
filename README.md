@@ -52,3 +52,8 @@ To include the Elyra extensions and build JupyterLab within the Dockerfile, foll
    ```Dockerfile
    RUN jupyter lab build
 
+3. After building the image and running Jupyter, the expected outcome should be as follows.
+
+![image](https://github.com/Dialdroid/egi-notebook-elyra/assets/8375883/4e07e50b-b962-4d6e-b3d7-2f3841637e4e)
+
+
