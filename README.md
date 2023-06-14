@@ -31,3 +31,9 @@ To include the Elyra extensions and build JupyterLab within the Dockerfile, foll
            amazon-braket-sdk==1.31.0 \
            elyra \
        && conda clean --all
+       
+2. The Jupyter build was added to load each Elyra extension into the JupyterLab graphical environment.
+
+   ```Dockerfile
+   RUN jupyter lab build
+
